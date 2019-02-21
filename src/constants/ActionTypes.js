@@ -1,0 +1,6 @@
+export const ADD_CITY = 'ADD_CITY'
+export const ADD_STAT = 'ADD_STAT'
+export const ADD_NEW_CITY = 'ADD_NEW_CITY'
+export const REMOVE_CITY = 'REMOVE_CITY'
+export const INIT_STATE = 'INIT_STATE'
+export const SAVE_LOCAL = 'SAVE_LOCAL'

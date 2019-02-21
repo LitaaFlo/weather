@@ -1,0 +1,41 @@
+.collection{
+    padding: 0 !important;
+}
+.collection-item{
+    position: relative;
+}
+.collection-item .delete-item{
+    color: #009688;
+}
+.collection-item.active .delete-item{
+    color: white;
+}
+.delete-item{
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 20px;
+    line-height: 40px;
+    transition: all .3s ease-in-out;
+    z-index: 1025;
+    width: 10%;
+    text-align: right;
+}
+.delete-item:hover{
+    font-size: 18px;
+}
+.input-field{
+    position: relative;
+}
+.col_cityes{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #009688;
+    font-weight: bold;
+}

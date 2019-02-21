@@ -1,0 +1,20 @@
+.third_d.no_scroll .recharts-wrapper, .third_d.no_scroll .recharts-surface{
+    width: 100% !important;
+}
+.block_charts{
+    padding-top: 10px;
+}
+.block_charts a{
+    padding: 5px 0 5px 0;
+    border-bottom: 1px solid #009688;
+    color: #9e9e9e;
+    margin-right: 15px;
+    cursor: pointer;
+    transition: all .3s;
+}
+.block_charts a:hover, .block_charts a.active{
+    color: #009688
+}
+.chart{
+    margin-top: 25px;
+}
