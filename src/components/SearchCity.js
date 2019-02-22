@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import styles from './searchcity.css'
+import './searchcity.css'
 
 export default class SearchCity extends Component {
     constructor (props) {
@@ -14,7 +13,7 @@ export default class SearchCity extends Component {
     this.props.addCity(this.state.city_name)
   }
   changeCity(e) {
-        this.setState({city_name: e.target.value})
+    this.setState({city_name: e.target.value})
   }
 
   render(){
@@ -29,12 +28,8 @@ export default class SearchCity extends Component {
         <div className="col s12">
          <button className="waves-effect waves-light btn right" type="submit" onClick={this.onYearBtnClick.bind(this)} ><i className="material-icons left">cloud</i>Add</button>
         </div>
-
       </form>
     )
   }
 }
 
-SearchCity.propTypes = {
-  addCity:  PropTypes.func,
-}

@@ -4,15 +4,16 @@
 .block_charts{
     padding-top: 10px;
 }
-.block_charts a{
+.block_charts .link{
     padding: 5px 0 5px 0;
     border-bottom: 1px solid #009688;
     color: #9e9e9e;
     margin-right: 15px;
     cursor: pointer;
     transition: all .3s;
+    display: inline-block;
 }
-.block_charts a:hover, .block_charts a.active{
+.block_charts .link:hover, .block_charts .link.active{
     color: #009688
 }
 .chart{

@@ -22,10 +22,7 @@ class App extends Component {
         const StatWeather = statWeather();
         const { addCity} = this.props.pageActions
         const { saveCity} = this.props.pageActions
-        const { removeCity } = this.props.pageActions
-        const { pickUp } = this.props.pageActions
         const { Save } = this.props.pageActions
-        const { showSearch } = this.props.pageActions
         return (
             <div className="container">
                 {this.props.city.loading
@@ -36,7 +33,7 @@ class App extends Component {
                             <div className="clearfix"/>
                             <WeatherRez weatherCity = {this.props.city} saveCity = { saveCity }  saveLocal = {Save}/>
                             <div className="clearfix"/>
-                            <SaveCityList weatherCityList = {this.props.city.cityes} newCities = {this.props.city.newCities} addCity={addCity} remove= {removeCity} getLocal = {pickUp} showSearch = {showSearch}/>
+                            <SaveCityList props={this.props} />
                             <div className="clearfix"/>
                         </div>
                         <div className="col m6 s12">
@@ -46,7 +43,7 @@ class App extends Component {
                     </div>
                     :  <div className="progress">
                         <div className="indeterminate" />
-                    </div>
+                       </div>
                 }
 
             </div>

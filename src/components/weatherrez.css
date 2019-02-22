@@ -15,6 +15,14 @@
 .margin-top-25{
     margin-top: 25px;
 }
+.card .card-action .save-bth {
+    color: #ffab40;
+    margin-right: 24px;
+    -webkit-transition: color .3s ease;
+    transition: color .3s ease;
+    text-transform: uppercase;
+    cursor: pointer;
+}
 @-webkit-keyframes pulsing {
     0% {
         -webkit-transform: scale(0.5, 0.5);

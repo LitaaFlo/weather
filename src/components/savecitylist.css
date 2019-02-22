@@ -1,6 +1,11 @@
 .collection{
     padding: 0 !important;
 }
+.collection{
+    padding: 0 !important;
+    max-height: 175px;
+    overflow-y: auto;
+}
 .collection-item{
     position: relative;
 }
@@ -9,6 +14,16 @@
 }
 .collection-item.active .delete-item{
     color: white;
+}
+.collection .collection-item {
+    display: block;
+    -webkit-transition: .25s;
+    transition: .25s;
+    color: #26a69a;
+    cursor: pointer;
+}
+.collection .collection-item:not(.active):hover {
+    background-color: #ddd;
 }
 .delete-item{
     cursor: pointer;

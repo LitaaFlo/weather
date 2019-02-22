@@ -26,22 +26,34 @@ export default function() {
 
                 } else {
                     if (this.props.city && this.props.city.cityes) {
-                        this.props.city.cityes.map((el) => {line[line.length] = el.name; temp[temp.length] = el.temp})
+                        this.props.city.cityes.map((el) => line[line.length] = el.name)
+                        this.props.city.cityes.map((el) => temp[temp.length] = el.temp)
                     }
                 }
                 const myChart = echarts.init(document.getElementById('main'));
                 const option = {
                     xAxis: {
                         type: 'category',
-                        data: line
+                        data: line,
+                        scale: true
                     },
                     yAxis: {
                         type: 'value',
-                        data: temp
+                        data: temp,
+                        scale: true,
                     },
                     grid: [{
                         top: '15px'
                     }],
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'cross',
+                            label: {
+                                show: true,
+                            }
+                        }
+                    },
                     series: [{
                         data: temp,
                         type: 'line',
@@ -53,27 +65,23 @@ export default function() {
          myChart.setOption(option);
 
         }
-  render() {
-    return(
-        <div className="row margin-top-25">
-
-            <div className="block_charts">
-                        <a onClick={() => this.setOptions(1)} className={this.state.active === 1 ? 'active' : ''} >Title 1</a>
-                        <a  onClick={() => this.setOptions(2)} className={this.state.active === 2 ? 'active' : ''} >Title 2</a>
-                        <div className="chart">
-                            <h6>{this.state.active === 1
-                                ? this.props.city.name && `Средняя температура по городу ${this.props.city.name}`
-                                : 'Средняя температура по сохранённым городам'}
-                            </h6>
-                            <div id="main" style={{width: '100%', height: '600px'}} />
-                        </div>
-
-
+      render() {
+        return(
+            <div className="row margin-top-25">
+                <div className="block_charts">
+                    <div onClick={() => this.setOptions(1)} key = "1" className={this.state.active === 1 ? 'active link' : 'link'} >График 1</div>
+                    <div onClick={() => this.setOptions(2)} key="2" className={this.state.active === 2 ? 'active link' : 'link'} >График 2</div>
+                    <div className="chart">
+                        <h6>{this.state.active === 1
+                            ? this.props.city.name && `Средняя температура по городу ${this.props.city.name}`
+                            : 'Средняя температура по сохранённым городам'}
+                        </h6>
+                        <div id="main" style={{width: '100%', height: '450px'}} />
+                    </div>
+                </div>
             </div>
-        </div>
-
-    )
-  }
-}
-return StatWeather
+        )
+      }
     }
+    return StatWeather
+}
