@@ -7,7 +7,6 @@ import NotFound from './404';
 import configureStore from './store/devTools'
 import { Provider } from 'react-redux'
 import {BrowserRouter, Switch, Route } from 'react-router-dom';
-// import * as serviceWorker from './serviceWorker';
 
 import './index.css';
 
@@ -17,9 +16,8 @@ ReactDOM.render(<Provider store={store}>
     <BrowserRouter>
         <Switch>
             <Route exact path="/" component={App} />
-            <Route path="/test" component={NotFound} />
+            <Route path="/*" component={NotFound} />
         </Switch>
     </BrowserRouter>
 </Provider>, document.getElementById('root'));
 
-// serviceWorker.unregister();

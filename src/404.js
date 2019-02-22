@@ -9,7 +9,10 @@ class NotFound extends Component {
     return (
       <div className="container">
           <div className="row">
-            404 not Found
+              <h1 style={{textAlign: 'center'}}>Страница не найдена</h1>
+              <div className="progress">
+                  <div className="indeterminate" />
+              </div>
           </div>
 
       </div>
