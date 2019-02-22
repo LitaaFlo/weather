@@ -3,7 +3,7 @@ var fetch = typeof window !== 'undefined' ? window.fetch : require('whatwg-fetch
 export function addCity(id, coord_1, coord_2){
   return dispatch => {
       if (id === null) {
-          fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${coord_1}&lon=${coord_2}&APPID=fa7f9dea641b5a00f26a962a61a26669`)
+          fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${coord_1}&lon=${coord_2}&units=metric&APPID=fa7f9dea641b5a00f26a962a61a26669`)
               .then(function(response) {
                   if (response.status === 200){
                       response.json().then( data =>  dispatch(SetCity(data))).then(() => dispatch(HistoryWeather(null, coord_1, coord_2)))
@@ -12,7 +12,7 @@ export function addCity(id, coord_1, coord_2){
                   }
               })
       } else {
-          fetch(`http://api.openweathermap.org/data/2.5/weather?q=${id}&APPID=fa7f9dea641b5a00f26a962a61a26669`)
+          fetch(`http://api.openweathermap.org/data/2.5/weather?q=${id}&units=metric&APPID=fa7f9dea641b5a00f26a962a61a26669`)
               .then(function (response) {
                   if (response.status === 200) {
                       response.json().then(data => dispatch(SetCity(data))).then(() => dispatch(HistoryWeather(id)))
@@ -26,7 +26,7 @@ export function addCity(id, coord_1, coord_2){
 }
 export function HistoryWeather(id, coord_1, coord_2){
     return dispatch => {
-            id === null ? fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${coord_1}&lon=${coord_2}&APPID=fa7f9dea641b5a00f26a962a61a26669`)
+            id === null ? fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${coord_1}&lon=${coord_2}&units=metric&APPID=fa7f9dea641b5a00f26a962a61a26669`)
                 .then(function(response) {
                     if (response.status === 200){
                         response.json().then(data => dispatch(SetStat(data)))
@@ -34,7 +34,7 @@ export function HistoryWeather(id, coord_1, coord_2){
                         alert('Ошибка в запросе. попробуйте ещё раз')
                     }
                 })
-                : fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${id}&APPID=fa7f9dea641b5a00f26a962a61a26669`)
+                : fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${id}&units=metric&APPID=fa7f9dea641b5a00f26a962a61a26669`)
                     .then(function(response) {
                     if (response.status === 200){
                         response.json().then(data => dispatch(SetStat(data)))

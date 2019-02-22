@@ -5,7 +5,7 @@ const initalState = {
 export default function city(state = initalState, action) {
   switch (action.type) {
     case types.ADD_CITY:
-      return {...state, loading: true, name:action.data.name, icon:action.data.weather[0].icon, description:action.data.weather[0].description, temp:(parseFloat(action.data.main.temp) - 237.15).toFixed(2)  }
+      return {...state, loading: true, name:action.data.name, icon:action.data.weather[0].icon, description:action.data.weather[0].description, temp: action.data.main.temp  }
     case types.ADD_STAT:
       return {...state, data:action.data.list}
     case types.ADD_NEW_CITY:
